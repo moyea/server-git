@@ -1,0 +1,36 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>server-git</title>
+  </head>
+  <body>
+    <ul>
+      {{#each articleList}}
+        <li> <a href="/page/{{this}}">{{this}}</a></li>
+      {{/each}}
+    </ul>
+    <form action="article" method="POST">
+      <fieldset>
+        <label>
+          Title:
+          <input type="text" name="title" />
+        </label>
+      </fieldset>
+      <fieldset>
+        <label>
+          Content:
+          <textarea name="content"></textarea>
+        </label>
+      </fieldset>
+      <fieldset>
+        <label>
+          Summary:
+          <textarea name="summary"></textarea>
+        </label>
+      </fieldset>
+      <button type="submit">提交</button>
+    </form>
+  </body>
+</html>

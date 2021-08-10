@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <h1>{{title}}</h1>
+    <h2>版本历史</h2>
+    <ul>
+      {{#each history}}
+        <li><a href="{{hash}}">v.{{index}} {{@index}}</a>
+          -
+          {{date}}
+          -
+          <a href="mailto:{{author_email}}">{{author_name}}</a>
+          -
+          {{message}}
+          {{#if @index}}
+            -
+            <a href="/page/restore?title={{@root.title}}&hash={{hash}}">恢复</a>
+          {{/if}}
+        </li>
+      {{/each}}
+    </ul>
+  </body>
+</html>
